@@ -4,7 +4,11 @@ import {todo_card} from '../styles';
 const TodoCard = (props) => {
   return (
     <View style={todo_card.container}>
-      <Text style={todo_card.container}>{props.data.todo}</Text>
+      <Text
+        style={todo_card.container}
+        onPress={() => props.onDone(props.data.id)}>
+        {props.data.todo}
+      </Text>
     </View>
   );
 };

@@ -18,12 +18,21 @@ const Main = () => {
       todo: text,
       isDone: false,
     };
+
     // console.log(element);
     const newArray = [...list, element];
 
     setList(newArray);
   }
-  const renderTodo = ({item}) => <TodoCard data={item} />;
+  const renderTodo = ({item}) => (
+    <TodoCard data={item} onDone={(id) => doneTodo(id)} />
+  );
+  function doneTodo(todoId) {
+    //   alert('Todo id:' + todoId);
+    const newArray = [...list];
+    const todoIndex = newArray.findIndex((item) => item.id == todoId);
+    newArray[todoIndex].isDone = !newArray;
+  }
   return (
     <SafeAreaView style={main.container}>
       <View style={main.container}>
