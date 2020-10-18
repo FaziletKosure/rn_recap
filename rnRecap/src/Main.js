@@ -31,7 +31,14 @@ const Main = () => {
           <Text style={main.todoText}>TODO</Text>
           <Text style={main.todoCount}>{list.length}</Text>
         </View>
-        <FlatList data={list} renderItem={renderTodo} />
+        <FlatList
+          keyExtractor={(item, index) => index.toString()}
+          data={list}
+          renderItem={renderTodo}
+          ListEmptyComponent={() => (
+            <Text style={main.emptyComponent}>Nothing to do...</Text>
+          )}
+        />
         <TodoInput onTodoEnter={(todoText) => addTodo(todoText)} />
       </View>
     </SafeAreaView>

@@ -26,6 +26,11 @@ const main = StyleSheet.create({
     fontSize: 35,
     color: '#ff9b31',
   },
+  emptyComponent: {
+    fontSize: 18,
+    color: 'white',
+    textAlign: 'center',
+  },
 });
 
 const todo_input = StyleSheet.create({
